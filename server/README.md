@@ -1,24 +1,30 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
 * Ruby version
+2.7.1
 
 * System dependencies
 
-* Configuration
+## development Setup
 
-* Database creation
+### without Docker
 
-* Database initialization
+```sh
+$ bundle exec rails db:create
+$ bundle exec rails db:migrate
+$ bundle exec rails db:seed
+```
 
-* How to run the test suite
+```sh
+$ bundle exec rails s
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+### with Docker
 
-* Deployment instructions
+```sh
+$ docker-compose run --rm rails bundle exec rails db:create
+$ docker-compose run --rm rails bundle exec rails db:migrate
+$ docker-compose run --rm rails bundle exec rails db:seed
+```
 
-* ...
+```sh
+$ docker-compose up
+```
